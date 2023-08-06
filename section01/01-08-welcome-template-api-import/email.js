@@ -1,3 +1,5 @@
+import {getToday} from "./util.js";
+
 export function checkEmail(email){
   if(!email && !email.includes("@")){
     console.log("이메일을 확인해주세요!")
@@ -23,13 +25,4 @@ export function getTemplate({ name, age, school }) {
 
 export function sendTemplateToEmail(email, template){
   console.log(`${email}으로 ${template}을 전송합니다.`)
-}
-
-export function getToday() {
-  let today = new Date();
-  let year = today.getFullYear();
-  let month = String(today.getMonth() + 1).padStart(2, "0")
-  let date = String(today.getDate()).padStart(2, "0")
-
-  return `${year}-${month}-${date}`
 }
