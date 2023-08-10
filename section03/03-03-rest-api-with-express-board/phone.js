@@ -16,3 +16,4 @@ export function getToken(){
 export function sendTokenToSMS(num, token){
   console.log(`${num} 번호로 인증번호 ${token}를 전송합니다.`)
 }
+
