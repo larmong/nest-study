@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>회원가입 연습하기</title>
+
+    <!--  axios CDN  -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script>
+      function phone(){
+        // 1. 입력한 핸드폰번호 가져오기
+        const phoneNum = document.getElementById("phoneNum").value
+        console.log(`핸드폰번호: ${phoneNum}`)
+
+        // 2. 해당 핸드폰번호로 "인증번호API" 요청하기(fetch, axios 등 사용)
+        axios.post("http://localhost:3000/tokens/phone", {
+          num: phoneNum
+        }).then((res) => {
+          console.log(res.data)
+          document.getElementById("result").innerText = res.data
+        })
+      }
+    </script>
+</head>
+<body>
+<div>
+    휴대폰번호: <input id="phoneNum" type="text"> <button onclick="phone()">인증하기</button>
+    <div id="result">인증상태</div>
+
+    <button>회원가입</button>
+</div>
+</body>
+</html>
+
+
+<!doctype html>
+<html lang="ko">
+
+</html>
