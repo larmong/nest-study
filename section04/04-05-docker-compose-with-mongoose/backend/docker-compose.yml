@@ -5,14 +5,15 @@ services:
   # 컴퓨터이름
   backend-service:
     build:
+      # 경로, 파일이름
       context: .
       dockerfile: Dockerfile
     ports:
-      - 4000:4000
+      - '4000:4000'
 
   # 컴퓨터이름
   database-service:
-    build:
-      context: .
-      dockerfile: Dockerfile_mongo
-
+    # Dockerfile 한줄 일 때, 'image' 로 대체 가능
+    image: mongo:5
+    ports:
+      - '27017:27017'
