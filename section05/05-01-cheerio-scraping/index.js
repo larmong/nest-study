@@ -10,7 +10,6 @@ const createMessage = async () => {
   // console.log(result.data)
 
   // 3. 스크래핑 결과에서 OG(오픈그래프) 코드를 골라내서 변수에 담기 => cheerio 도움 받기!
-  // 3. 스크래핑 결과에서 OG(오픈그래프) 코드를 골라내서 변수에 담기 => cheerio 도움 받기!
   const $ = cheerio.load(result.data)
   $("meta").each((index, el) => {
     if( $(el).attr("property") && $(el).attr.includes("og:") ){
