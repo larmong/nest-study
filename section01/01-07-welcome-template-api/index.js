@@ -2,7 +2,7 @@ function checkEmail(email){
   return email.includes('@');
 }
 
-function getWelcomeTemplate(name, email, age, school, createdAt){
+function getWelcomeTemplate(name, email, age, school){
   const template = `
     <html>
       <body>
