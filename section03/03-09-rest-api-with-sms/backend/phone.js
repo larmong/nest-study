@@ -21,7 +21,7 @@ export async function sendTokenToSMS(phone, token){
   const messageService = new smsService('', '');
   const result = await messageService.sendOne({
     to: phone,
-    from: '01092222240',
+    from: '',
     text: `[테스트] 요청하신 인증번호는 ${token} 입니다.`
   })
   console.log(result)
