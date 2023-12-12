@@ -1,0 +1,18 @@
+version: '3.1'
+
+# 컴퓨터들
+services:
+
+  backend-c:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 4000:4000
+
+  database-c:
+    build:
+      context: .
+      dockerfile: DockerfileMongo
+    ports:
+      - 27017:27017
