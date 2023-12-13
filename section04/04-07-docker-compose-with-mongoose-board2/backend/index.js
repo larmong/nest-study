@@ -14,7 +14,7 @@ app.get('/boards', async function (req, res) {
   const result = await Board.find()
 
   // 2. DB에서 꺼내온 데이터를 응답(res)
-  res.send(result)
+  await res.send(result)
 })
 
 app.post('/boards', async function (req, res) {
@@ -30,7 +30,7 @@ app.post('/boards', async function (req, res) {
     contents: req.body.contents,
   })
 
-  board.
+  await board.save()
 
   // 2. DB에 저장된 결과를 브라우저에 응답(res)
   res.send('게시물이 등록에 성공하였습니다!')
