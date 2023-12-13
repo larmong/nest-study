@@ -1,0 +1,9 @@
+export class ProductService {
+  checkSoldOut = () => {
+    console.log("판매완료가 됐는지 검증")
+    // 2. 판매 여부 검증하는 코드
+    // ...
+    // ...
+    // ...
+  }
+}
