@@ -5,7 +5,7 @@ import { AppService } from './app.service';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get()
+  @Get('/') // 엔드포인트
   getHello(): string {
     const qqq = 3;
     console.log(qqq);
