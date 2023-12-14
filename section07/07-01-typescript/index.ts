@@ -40,7 +40,7 @@ function add(num1: number, num2: number, unit: string): string{
   return num1 + num2 + unit;
 }
 
-add(1000, 2000, "원") // 결과의 리턴 타입도 예측 가능!!
+add(1000, 2000, "원") // 결과의 리턴 타입도 예측 가능!!z
 
 
 
