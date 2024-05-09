@@ -1,0 +1,15 @@
+{
+  "name": "03-07-graqhql-api-with-apollo-server-board",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "dependencies": {
+    "apollo-server": "^3.13.0",
+    "graphql": "^16.8.1",
+    "nodemon": "^3.1.0"
+  }
+}
