@@ -1,3 +1,13 @@
+function getToday(){
+  const today = new Date();
+
+  const year = today.getFullYear();
+  const month = ('0' + (today.getMonth() + 1)).slice(-2);
+  const day = ('0' + today.getDate()).slice(-2);
+
+  return `${year}-${month}-${day}`;
+}
+
 function checkEmail(email){
   if(!email || !email.includes("@")){
     console.log("error! 이메일을 확인해주세요!");
@@ -46,8 +56,8 @@ const newUser = {
   name: "철수",
   age: "8",
   school: "다람쥐초등학교",
-  email: "aa.com",
-  createdAt: "2024-05-09",
+  email: "a@a.com",
+  createdAt: getToday(),
 }
 
 createUser(newUser);
