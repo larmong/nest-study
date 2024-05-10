@@ -6,9 +6,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    volumes:
-      - ./index.js:/backend/index.js
-      - ./email.js:/backend/email.js
     ports:
       - 4000:4000
 

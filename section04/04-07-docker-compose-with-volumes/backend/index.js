@@ -64,7 +64,6 @@ app.post('users', function (req, res){
   sendTemplateToEmail(email, template)
 })
 
-mongoose.set("debug", true)
 
 mongoose.connect("mongodb://database:27017/my-docker")
   .then(() => {
