@@ -1,0 +1,9 @@
+export class CashService {
+  checkValue = () => {
+    console.log("돈이 있는지 검사중!")
+    // 돈이 있는지 검증 (대략 10줄)
+    // ...
+    // ...
+    // ...
+  }
+}

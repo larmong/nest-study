@@ -1,0 +1,9 @@
+export class ProductService {
+  checkSoldOut = () => {
+    console.log("판매완료 검사중!")
+    // 판매 여부 검증 (대략 10줄)
+    // ...
+    // ...
+    // ...
+  }
+}
