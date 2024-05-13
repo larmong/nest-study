@@ -5,8 +5,15 @@ import { AppService } from './app.service';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get()
+  @Get('/products/buy')
   getHello(): string {
-    return this.appService.getHello();
+    const qqq = 3;
+
+    const profile = {
+      age: 13,
+      school: '다람쥐초등학교',
+    };
+
+    return this.appService.qqq();
   }
 }
