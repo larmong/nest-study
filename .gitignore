@@ -10,3 +10,5 @@ node_modules
 config
 .prettierrc
 .env
+*/.env
+*/.env.docker
