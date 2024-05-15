@@ -8,8 +8,8 @@
 FROM node:14
 
 # 2. 로컬에 있는 폴더/파일 도커로 복사
-COPY ./index.js index.js
+COPY ./index.js date.js
 
-# 3. 도커 안에서 index.js 실행
-# RUN node index.js
-CMD node index.js
+# 3. 도커 안에서 date.js 실행
+# RUN node date.js
+CMD node date.js

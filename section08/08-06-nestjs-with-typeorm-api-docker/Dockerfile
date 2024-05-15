@@ -9,5 +9,5 @@ RUN yarn install
 
 COPY . /backend/
 
-# 3. 도커 안에서 index.js 실행
+# 3. 도커 안에서 date.js 실행
 CMD yarn start:dev

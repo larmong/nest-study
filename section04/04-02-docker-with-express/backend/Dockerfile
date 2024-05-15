@@ -15,6 +15,6 @@ COPY . /backend/
 WORKDIR /backend/
 RUN yarn install
 
-# 3. 도커 안에서 index.js 실행
-# RUN node index.js
+# 3. 도커 안에서 date.js 실행
+# RUN node date.js
 CMD yarn start
