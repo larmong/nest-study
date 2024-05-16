@@ -1,0 +1,14 @@
+services:
+  quiz-docker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./src:/quiz-docker/src
+    ports:
+      - 3000:3000
+
+  quiz-mongodb:
+    image: mongo:5
+    ports:
+      - 27017:27017

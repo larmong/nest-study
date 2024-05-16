@@ -1,7 +1,7 @@
-import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
-import { Module } from '@nestjs/common';
-import { GraphQLModule } from '@nestjs/graphql';
-import { BoardsModule } from './apis/boards/boards.module';
+import { ApolloDriver, ApolloDriverConfig } from "@nestjs/apollo";
+import { Module } from "@nestjs/common";
+import { GraphQLModule } from "@nestjs/graphql";
+import { BoardsModule } from "./apis/boards/boards.module";
 
 @Module({
   imports: [
@@ -12,7 +12,7 @@ import { BoardsModule } from './apis/boards/boards.module';
     // GraphQL 설정
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
-      autoSchemaFile: 'src/commons/graphql/schema.gql',
+      autoSchemaFile: "src/common/graphql/schema.gql",
     }),
   ],
 })

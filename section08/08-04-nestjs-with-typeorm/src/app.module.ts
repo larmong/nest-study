@@ -15,7 +15,7 @@ import { Board } from "./apis/boards/entities/board.entity";
     // GraphQL 설정
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
-      autoSchemaFile: "src/commons/graphql/schema.gql",
+      autoSchemaFile: "src/common/graphql/schema.gql",
     }),
 
     // typeorm
