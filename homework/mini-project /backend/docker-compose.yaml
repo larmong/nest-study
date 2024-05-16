@@ -1,0 +1,14 @@
+services:
+  mini-project-docker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./backend:/mini-project/backend
+    ports:
+      - 3000:3000
+
+  mini-project-mongodb:
+    image: mongo:5
+    ports:
+      - 27017:27017
