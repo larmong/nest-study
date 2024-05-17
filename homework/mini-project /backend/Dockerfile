@@ -1,10 +1,10 @@
 FROM node:18
 
-COPY ./package.json /quiz-docker/
-COPY ./yarn.lock /quiz-docker/
-WORKDIR /quiz-docker/
+COPY ./package.json /mini-project/
+COPY ./yarn.lock /mini-project/
+WORKDIR /mini-project/
 RUN yarn install
 
-COPY . /quiz-docker/
+COPY . /mini-project/
 
 CMD yarn start:dev

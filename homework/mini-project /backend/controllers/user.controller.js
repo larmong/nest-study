@@ -5,12 +5,20 @@ export class UserController {
   emailService;
   phoneService;
   tokenAuthService;
+  metaService;
 
-  constructor(personalService, emailService, phoneService, tokenAuthService) {
+  constructor({
+    personalService, //
+    emailService,
+    phoneService,
+    tokenAuthService,
+    metaService,
+  }) {
     this.personalService = personalService;
     this.emailService = emailService;
     this.phoneService = phoneService;
     this.tokenAuthService = tokenAuthService;
+    this.metaService = metaService;
   }
 
   // 회원 목록 조회 API
@@ -46,7 +54,8 @@ export class UserController {
     const isToken = await this.tokenAuthService.checkAuth(phone);
     if (!isToken) return res.status(422).send("핸드폰번호 인증이 필요합니다!");
 
-    // (나중에) 내가 좋아하는 사이트로 입력 받은 사이트를 cheerio를 활용하여 scraping 한 후, 관련 오픈그래프(OG) 메타 태그 정보를 다른 입력 받은 정보들과 함께 User DB에 저장해주세요.
+    // ==> 5. 메타 정보 가져오기
+    const mataData = await this.metaService.getMeta(prefer);
 
     const profile = new User({
       name,
@@ -55,6 +64,7 @@ export class UserController {
       password,
       phone,
       personal: isPersonal,
+      og: mataData,
     });
     await profile.save();
 

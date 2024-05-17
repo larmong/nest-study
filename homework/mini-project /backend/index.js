@@ -13,6 +13,7 @@ import { PersonalService } from "./controllers/services/personal.service.js";
 import { EmailService } from "./controllers/services/email.service.js";
 import { TokenAuthService } from "./controllers/services/tokenAuth.service.js";
 import { PhoneService } from "./controllers/services/phone.service.js";
+import { MetaService } from "./controllers/services/meta.service.js";
 
 const app = express();
 app.use(cors());
@@ -23,14 +24,24 @@ const personalService = new PersonalService();
 const emailService = new EmailService();
 const phoneService = new PhoneService();
 const tokenAuthService = new TokenAuthService();
+const metaService = new MetaService();
 
 // 유저 API
-const userController = new UserController(personalService, emailService, phoneService, tokenAuthService);
+const userController = new UserController({
+  personalService, //
+  emailService,
+  phoneService,
+  tokenAuthService,
+  metaService,
+});
 app.get("/users", userController.getUser);
 app.post("/users", userController.createUser);
 
 // 토큰 인증 API
-const tokenController = new TokenController(phoneService, tokenAuthService);
+const tokenController = new TokenController({
+  phoneService, //
+  tokenAuthService,
+});
 app.post("/tokens/phone", tokenController.createToken);
 app.patch("/tokens/phone", tokenController.completeToken);
 

@@ -2,7 +2,10 @@ export class TokenController {
   phoneService;
   tokenAuthService;
 
-  constructor(phoneService, tokenAuthService) {
+  constructor({
+    phoneService, //
+    tokenAuthService,
+  }) {
     this.phoneService = phoneService;
     this.tokenAuthService = tokenAuthService;
   }

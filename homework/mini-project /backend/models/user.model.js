@@ -7,6 +7,11 @@ const userSchema = new mongoose.Schema({
   prefer: String,
   password: String,
   phone: String,
+  og: {
+    title: String,
+    description: String,
+    image: String,
+  },
 });
 
 export const User = mongoose.model("User", userSchema);
