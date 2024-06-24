@@ -6,11 +6,6 @@ import { ConfigModule } from "@nestjs/config";
 
 import { BoardsModule } from "./apis/boards/boards.module";
 import { Board } from "./apis/boards/entities/board.entity";
-import { Product } from "./apis/products/entities/product.entity";
-import { ProductTag } from "./apis/productsTags/entities/productTag.entity";
-import { ProductSalesLocation } from "./apis/productsSalesLocations/entities/productSalesLocation.entity";
-import { User } from "./apis/users/entities/user.entity";
-import { ProductCategory } from "./apis/productsCategories/entities/productCategory.entity";
 
 @Module({
   imports: [
@@ -34,7 +29,7 @@ import { ProductCategory } from "./apis/productsCategories/entities/productCateg
       username: process.env.DATABASE_USERNAME,
       password: process.env.DATABASE_PASSWORD,
       database: process.env.DATABASE_DATABASE,
-      entities: [Board, Product, ProductTag, ProductSalesLocation, ProductCategory, User],
+      entities: [__dirname + '/apis/**/*.entity.*'],
       synchronize: true,
       logging: true,
     }),

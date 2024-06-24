@@ -1,21 +1,21 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import {Column, Entity, PrimaryGeneratedColumn} from "typeorm";
 
 @Entity()
 export class ProductSalesLocation {
   @PrimaryGeneratedColumn("uuid")
-  id: string;
+  id: string
 
   @Column()
-  address: string;
+  address: string
 
   @Column()
-  addressDetail: string;
+  addressDetail: string
 
-  @Column({ type: "decimal", precision: 9, scale: 6 }) // 위도
-  lat: number;
+  @Column({ type: "decimal", precision: 9, scale: 6 })
+  lat: number
 
-  @Column({ type: "decimal", precision: 9, scale: 6 }) // 경도
-  lng: number;
+  @Column({ type: "decimal", precision: 9, scale: 6 })
+  lng: number
 
   @Column()
   meetingTime: Date;

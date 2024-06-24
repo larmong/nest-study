@@ -1,10 +1,13 @@
 import {Column, Entity, PrimaryGeneratedColumn} from "typeorm";
 
 @Entity()
-export class ProductCategory {
+export class User {
   @PrimaryGeneratedColumn("uuid")
   id: string
 
-  @Column()
+  @Column({ unique: true })
   name: string
+
+  @Column()
+  email: string
 }
